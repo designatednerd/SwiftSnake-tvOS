@@ -9,31 +9,23 @@
 import Foundation
 import SpriteKit
 
-class Snake: SKNode {
-    
-    enum TurnDirection {
-        case Left,
-        Right,
-        Up,
-        Down
-    }
+enum TurnDirection {
+    case Left,
+    Right,
+    Up,
+    Down
+}
 
+class Snake {
+    
     let head = SnakeHeadNode()
     var bodyPartCount = 3 //Start with this many body parts.
+    var currentDirection: TurnDirection?
     
     //MARK:- User navigation of the snake
     
     func turn(direction: TurnDirection) {
-        switch direction {
-        case .Left:
-            print("TURN LEFT")
-        case .Right:
-            print("TURN RIGHT")
-        case .Up:
-            print("TURN UP")
-        case .Down:
-            print("TURN DOWN FOR WHAT?!")
-        }
+        self.currentDirection = direction
     }
     
     //MARK:- Food Consumption

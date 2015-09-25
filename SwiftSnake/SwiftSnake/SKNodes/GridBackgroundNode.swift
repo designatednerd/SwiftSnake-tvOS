@@ -16,8 +16,10 @@ class GridBackgroundNode: SKNode {
     private static let columns = 16 * multiplier
     private static let rows = 9 * multiplier
     
-    let backingStore: GridStorage<PieceToDisplay> = GridStorage(columns: GridBackgroundNode.columns,
+    var backingStore: GridStorage<PieceToDisplay> = GridStorage(columns: GridBackgroundNode.columns,
         rows: GridBackgroundNode.rows)
+    var centerStore: GridStorage<CGPoint> = GridStorage(columns: GridBackgroundNode.columns,
+    rows: GridBackgroundNode.rows)
     
     //MARK: - Init
     
@@ -45,9 +47,17 @@ class GridBackgroundNode: SKNode {
     
     //MARK: - Setup
     
+    func itemWidth(gridSize: CGSize) -> CGFloat {
+        return gridSize.width / CGFloat(GridBackgroundNode.columns)
+    }
+    
+    func itemHeight(gridSize: CGSize) -> CGFloat {
+        return gridSize.height / CGFloat(GridBackgroundNode.rows)
+    }
+    
     func setupGrid(gridSize: CGSize) {
-        let xWidth = gridSize.width / CGFloat(GridBackgroundNode.columns)
-        let yHeight = gridSize.height / CGFloat(GridBackgroundNode.rows)
+        let xWidth = itemWidth(gridSize)
+        let yHeight = itemHeight(gridSize)
         let nodeSize = CGSize(width: xWidth, height: yHeight)
         
         for column in 0..<GridBackgroundNode.columns {
@@ -56,9 +66,61 @@ class GridBackgroundNode: SKNode {
                 let yOrigin = yHeight * CGFloat(row) + yHeight / 2
                 let space = SpaceNode.emptyNodeOfSize(nodeSize)
                 space.position = CGPointMake(xOrigin, yOrigin)
+                
+                let center = CGPoint(x: CGRectGetMidX(space.frame),
+                    y: CGRectGetMidY(space.frame))
+                centerStore[column, row] = center
                 self.addChild(space)
             }
         }
+    }
+    
+    func addSnake(snake: Snake) {
+        //TODO: Actually add snake
+        
+        let middleRow = GridBackgroundNode.rows / 2
+        let middleColumn = GridBackgroundNode.columns / 2
+        
+        backingStore[middleColumn, middleRow] = .SnakeHead
+        backingStore[middleColumn + 1, middleRow] = .SnakeBody
+        backingStore[middleColumn + 2, middleRow] = .SnakeBody
+    }
+    
+    
+    //MARK: Display logic
+    
+    
+    func updateDisplayFromBackingStore(snake: Snake, size: CGSize) {
+        self.removeAllChildren()
+        for column in 0..<GridBackgroundNode.columns {
+            for row in 0..<GridBackgroundNode.rows {
+                if let piece = backingStore[column, row],
+                    let center = centerStore[column, row] {
+                        var node: SKNode
+                        switch piece {
+                        case .SnakeHead:
+                            node = SnakeHeadNode.withDirection(snake.currentDirection)
+                        case .SnakeBody:
+                            node = SnakeBodyPartNode.withPart(.Horizontal)
+                        case .Food:
+                            node = FoodNode.makeFood()
+                        }
+                        
+                        self.addChild(node)
+                        
+                        node.xScale = itemWidth(size) / CGRectGetWidth(node.frame)
+                        node.yScale = itemHeight(size) / CGRectGetHeight(node.frame)
+                        node.position = center
+                }
+            }
+        }
+    }    
+    
+    //MARK: - Other Scenes
+    
+    func showGameOver() {
+        //TODO: Show game over scene
+        print("GAME OVER")
     }
 }
 
@@ -73,8 +135,7 @@ extension GridBackgroundNode: SKPhysicsContactDelegate {
 //        }
         
         if CollisionHandler.isOuroboros(contact.bodyA, contact.bodyB) {
-            //TODO: Show game over scene
-            print("GAME OVER")
+            showGameOver()
         } else if CollisionHandler.isEating(contact.bodyA, contact.bodyB) {
             //TODO: Make snake longer
             print("OM NOM NOM");
