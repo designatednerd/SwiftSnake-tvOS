@@ -23,5 +23,6 @@ class GameViewController: UIViewController {
         // create the Snake game scene
         let scene = SnakeGameScene.makeSceneOfSize(skView.frame.size)
         skView.presentScene(scene)
+        scene.addRemoteHandlingToView(skView)
     }
 }
