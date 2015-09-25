@@ -12,6 +12,7 @@
 		33423A4F1BB58BF600BC60F8 /* GridStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33423A4C1BB58BF600BC60F8 /* GridStorage.swift */; };
 		33423A501BB58BF600BC60F8 /* PieceToDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33423A4D1BB58BF600BC60F8 /* PieceToDisplay.swift */; };
 		335B7AC51BB46B9600C9FE17 /* NodeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335B7AC41BB46B9600C9FE17 /* NodeConstants.swift */; };
+		335EB8BF1BB5F5C1003B7BB8 /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335EB8BE1BB5F5C1003B7BB8 /* Randomizer.swift */; };
 		33B7A6EE1BB449FC00CA0C0D /* FoodNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B7A6ED1BB449FC00CA0C0D /* FoodNode.swift */; };
 		33DAA8DA1BB4484100A93D9E /* SnakeHeadNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DAA8D91BB4484100A93D9E /* SnakeHeadNode.swift */; };
 		33DAA8DC1BB4485300A93D9E /* SnakeBodyPartNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DAA8DB1BB4485300A93D9E /* SnakeBodyPartNode.swift */; };
@@ -41,6 +42,7 @@
 		33423A4C1BB58BF600BC60F8 /* GridStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridStorage.swift; sourceTree = "<group>"; };
 		33423A4D1BB58BF600BC60F8 /* PieceToDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieceToDisplay.swift; sourceTree = "<group>"; };
 		335B7AC41BB46B9600C9FE17 /* NodeConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeConstants.swift; sourceTree = "<group>"; };
+		335EB8BE1BB5F5C1003B7BB8 /* Randomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
 		33B7A6ED1BB449FC00CA0C0D /* FoodNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodNode.swift; sourceTree = "<group>"; };
 		33DAA8D91BB4484100A93D9E /* SnakeHeadNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnakeHeadNode.swift; sourceTree = "<group>"; };
 		33DAA8DB1BB4485300A93D9E /* SnakeBodyPartNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnakeBodyPartNode.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				33423A4B1BB58BF600BC60F8 /* CollisionHandler.swift */,
 				33423A4C1BB58BF600BC60F8 /* GridStorage.swift */,
 				33423A4D1BB58BF600BC60F8 /* PieceToDisplay.swift */,
+				335EB8BE1BB5F5C1003B7BB8 /* Randomizer.swift */,
 			);
 			path = GameLogicControllers;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				33DE21EC1BB433A6004BD380 /* Snake.swift in Sources */,
 				33DE21F21BB436F2004BD380 /* GridBackgroundNode.swift in Sources */,
 				33423A4F1BB58BF600BC60F8 /* GridStorage.swift in Sources */,
+				335EB8BF1BB5F5C1003B7BB8 /* Randomizer.swift in Sources */,
 				33DE21F01BB433EF004BD380 /* SnakeGameScene.swift in Sources */,
 				33DAA8DC1BB4485300A93D9E /* SnakeBodyPartNode.swift in Sources */,
 				33F2C0A61BB4592000897BC9 /* SpaceNode.swift in Sources */,
