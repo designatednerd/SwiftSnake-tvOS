@@ -24,7 +24,7 @@ class SnakeGameScene: SKScene {
      */
     static func makeSceneOfSize(sceneSize: CGSize) -> SnakeGameScene {
         let scene = SnakeGameScene(size: sceneSize)
-        scene.backgroundColor = .redColor()
+        scene.backgroundColor = .blackColor()
         
         scene.backgroundNode = GridBackgroundNode()
         scene.backgroundNode.setupGrid(sceneSize)
