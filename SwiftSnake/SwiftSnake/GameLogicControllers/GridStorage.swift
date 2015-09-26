@@ -13,7 +13,7 @@ import Foundation
  *  Inspired by Mathijis Hollemans' "This is totally not Candy Crush" tutorial: 
  *  http://www.raywenderlich.com/75270/make-game-like-candy-crush-with-swift-tutorial-part-1
  */
-struct GridStorage<T> {
+class GridStorage<T> {
     private let columns: Int
     private let rows: Int
     private var storageArray: Array<T?>

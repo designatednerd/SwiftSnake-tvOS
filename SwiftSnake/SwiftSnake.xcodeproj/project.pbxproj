@@ -12,6 +12,7 @@
 		33423A4F1BB58BF600BC60F8 /* GridStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33423A4C1BB58BF600BC60F8 /* GridStorage.swift */; };
 		33423A501BB58BF600BC60F8 /* PieceToDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33423A4D1BB58BF600BC60F8 /* PieceToDisplay.swift */; };
 		335B7AC51BB46B9600C9FE17 /* NodeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335B7AC41BB46B9600C9FE17 /* NodeConstants.swift */; };
+		335EB8BB1BB5F488003B7BB8 /* GameNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335EB8BA1BB5F488003B7BB8 /* GameNode.swift */; };
 		335EB8BD1BB5F531003B7BB8 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335EB8BC1BB5F531003B7BB8 /* Grid.swift */; };
 		335EB8BF1BB5F5C1003B7BB8 /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335EB8BE1BB5F5C1003B7BB8 /* Randomizer.swift */; };
 		33B7A6EE1BB449FC00CA0C0D /* FoodNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B7A6ED1BB449FC00CA0C0D /* FoodNode.swift */; };
@@ -43,6 +44,7 @@
 		33423A4C1BB58BF600BC60F8 /* GridStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridStorage.swift; sourceTree = "<group>"; };
 		33423A4D1BB58BF600BC60F8 /* PieceToDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieceToDisplay.swift; sourceTree = "<group>"; };
 		335B7AC41BB46B9600C9FE17 /* NodeConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeConstants.swift; sourceTree = "<group>"; };
+		335EB8BA1BB5F488003B7BB8 /* GameNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameNode.swift; sourceTree = "<group>"; };
 		335EB8BC1BB5F531003B7BB8 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		335EB8BE1BB5F5C1003B7BB8 /* Randomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
 		33B7A6ED1BB449FC00CA0C0D /* FoodNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodNode.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				33DE21F11BB436F2004BD380 /* GridBackgroundNode.swift */,
+				335EB8BA1BB5F488003B7BB8 /* GameNode.swift */,
 				33F2C0A51BB4592000897BC9 /* SpaceNode.swift */,
 				33DE21E91BB433A6004BD380 /* Snake.swift */,
 				33DAA8D91BB4484100A93D9E /* SnakeHeadNode.swift */,
@@ -266,6 +269,7 @@
 				33423A4E1BB58BF600BC60F8 /* CollisionHandler.swift in Sources */,
 				33DAA8DA1BB4484100A93D9E /* SnakeHeadNode.swift in Sources */,
 				33DE21EC1BB433A6004BD380 /* Snake.swift in Sources */,
+				335EB8BB1BB5F488003B7BB8 /* GameNode.swift in Sources */,
 				33DE21F21BB436F2004BD380 /* GridBackgroundNode.swift in Sources */,
 				33423A4F1BB58BF600BC60F8 /* GridStorage.swift in Sources */,
 				335EB8BF1BB5F5C1003B7BB8 /* Randomizer.swift in Sources */,

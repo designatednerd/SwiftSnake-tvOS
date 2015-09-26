@@ -20,7 +20,7 @@ class Snake {
     
     let head = SnakeHeadNode()
     var bodyPartCount = 3 //Start with this many body parts.
-    var currentDirection: TurnDirection?
+    var currentDirection: TurnDirection = .Left
     
     //MARK:- User navigation of the snake
     

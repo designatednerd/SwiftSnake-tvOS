@@ -13,7 +13,8 @@ class SnakeGameScene: SKScene {
     
     var touchBegin = CGPointZero
     var snake: Snake!
-    var backgroundNode: GridBackgroundNode!
+    var gameNode: GameNode!
+    var grid: Grid!
     
     /**
      Factory method.
@@ -26,14 +27,14 @@ class SnakeGameScene: SKScene {
         let scene = SnakeGameScene(size: sceneSize)
         scene.backgroundColor = .blackColor()
         
-        scene.backgroundNode = GridBackgroundNode()
-        scene.backgroundNode.setupGrid(sceneSize)
-        scene.addChild(scene.backgroundNode)
+        scene.grid = Grid(size: sceneSize)
+        let backgroundNode = GridBackgroundNode(grid: scene.grid)
+        scene.addChild(backgroundNode)
         
-        scene.snake = Snake()
-        scene.backgroundNode.addSnake(scene.snake)
+        scene.gameNode = GameNode(grid: scene.grid, snake: Snake())
+        scene.addChild(scene.gameNode)
         
-        scene.physicsWorld.contactDelegate = scene.backgroundNode
+        scene.physicsWorld.contactDelegate = scene.gameNode
         return scene
     }
     
@@ -56,19 +57,19 @@ class SnakeGameScene: SKScene {
                 //More horizontal than vertical.
                 if deltaX > 0 {
                     print("LEFT")
-                    snake?.turn(.Left)
+                    self.gameNode.snake.turn(.Left)
                 } else {
                     print("RIGHT")
-                    snake?.turn(.Right)
+                    self.gameNode.snake.turn(.Right)
                 }
             } else {
                 //More vertical than horizontal. 
                 if deltaY > 0 {
                     print("UP")
-                    snake?.turn(.Up)
+                    self.gameNode.snake.turn(.Up)
                 } else {
                     print("DOWN")
-                    snake?.turn(.Down)
+                    self.gameNode.snake.turn(.Down)
                 }
             }
             
@@ -84,7 +85,13 @@ class SnakeGameScene: SKScene {
         }
     }
     
+    //Scene Lifecycle
+    override func didMoveToView(view: SKView) {
+        super.didMoveToView(view)
+        self.gameNode.startTimer()
+    }
+    
     override func update(currentTime: NSTimeInterval) {
-        backgroundNode.updateDisplayFromBackingStore(snake, size: self.view!.frame.size)
+        self.gameNode.updateDisplayFromBackingStore()
     }
 }

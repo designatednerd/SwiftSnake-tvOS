@@ -16,6 +16,11 @@ struct Grid {
     
     private var size: CGSize
     
+    var backingStore: GridStorage<PieceToDisplay> = GridStorage(columns: Grid.columns,
+        rows: Grid.rows)
+    var centerStore: GridStorage<CGPoint> = GridStorage(columns: Grid.columns,
+        rows: Grid.rows)
+    
     init(size: CGSize) {
         self.size = size
     }
